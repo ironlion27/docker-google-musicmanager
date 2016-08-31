@@ -13,7 +13,8 @@ RUN echo "deb http://dl.google.com/linux/musicmanager/deb/ stable main" >> /etc/
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
 
 RUN apt-get -y update
-RUN apt-get install -y google-musicmanager-beta xvfb x11vnc supervisor
+RUN apt-get install -y google-musicmanager-beta xvfb x11vnc supervisor macchanger
+RUN macchanger -r eth0
 
 RUN mkdir /music
 VOLUME /music
